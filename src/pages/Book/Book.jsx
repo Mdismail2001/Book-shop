@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Book = ({book}) => {
-    console.log(book)
-    const {bookName, image, author,category,rating, publisher} = book;
+    // console.log(book)
+    const {bookName, image, author,category,rating, publisher, bookId} = book;
     return (
+        <Link to={`/bookDetails/${bookId}`}>
         <div className='mx-auto justify-between border rounded mb-5 gap-5 '>
             <div className="card  shadow-sm  ">
             <figure className='bg-gray-950 m-5' >
@@ -28,6 +30,7 @@ const Book = ({book}) => {
             </div>
             </div>
         </div>
+        </Link>
     );
 };
 
